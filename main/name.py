@@ -20,7 +20,7 @@ cate_dict = {
     "travel":"42"
 }
 for k,v in cate_dict.items():
-    for i in range(1):
+    for i in range(10):
         res = requests.get(url=URL + "/search-book?language=en&field_genre[%s]=%s&search=&sort_by=field_downloads&page=%s" % (v,v,i),
                            headers=headers, cookies=cookies)
         content = soup(res.content,"lxml")
