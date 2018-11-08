@@ -25,6 +25,7 @@ router.register(r'detail', DetailViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('name/', name_score),
     #path('crawler/', crawler),
     #path('sub/', subcategory),
     #path('detail/', detail),

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from main.crawler import *
-from main.serializers import CategorySerializer,SubCategorySerializer,DetailSerializer
+from main.serializers import CategorySerializer, SubCategorySerializer, DetailSerializer
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -22,6 +22,10 @@ def detail(requests):
     return HttpResponse("detail抓取完成")
 
 
+def name_score(requests):
+    return
+
+
 class CategoryViewset(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -33,6 +37,7 @@ class SubCategoryViewset(viewsets.ModelViewSet):
     serializer_class = SubCategorySerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('category_id',)
+
 
 class DetailViewset(viewsets.ModelViewSet):
     queryset = Detail.objects.all()
